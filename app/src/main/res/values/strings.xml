@@ -10,7 +10,7 @@
     <string name="title_activity_tabbed">TabbedActivity</string>
     <string name="title_activity_home">home</string>
 
-    <string name="polling">Pole Map</string>
+    <string name="polling">Poll Map</string>
     <string name="title_activity_map">Map</string>
 
     <string name="enter_address">Enter Address</string>
