@@ -46,13 +46,13 @@
         android:layout_weight="1">
 
         <ScrollView
-            android:id="@+id/stockScrollView"
+            android:id="@+id/propScrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp">
 
             <TableLayout
-                android:id="@+id/stockTableScrollView"
+                android:id="@+id/propTableScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
