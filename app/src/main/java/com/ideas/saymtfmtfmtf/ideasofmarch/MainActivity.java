@@ -1,27 +1,134 @@
 package com.ideas.saymtfmtfmtf.ideasofmarch;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TableLayout;
 import android.widget.TextView;
+
+import java.util.Arrays;
 
 
 public class MainActivity extends ActionBarActivity {
 
-    TextView propositionsTextView;
-    TextView yesTextView;
-    TextView noTextView;
+    public final static String PROP_SYMBOL = "com.ideas.saymtfmtfmtf.ideasofmatch.PROP"; // unique
 
+    TableLayout propTableScrollView;
+    SharedPreferences propMeasures;
+    SharedPreferences propMeasureBox;
+
+
+    // Like to pull data from Californian measures
+    // Pre-made Measures
+    String propMeasuresEntered1;
+    String propMeasuresEntered2;
+    String propMeasuresEntered3;
+    String propMeasuresEntered4;
+    String propMeasuresEntered5;
+    String propMeasuresEntered6;
+    String propMeasuresEntered7;
+    String propMeasuresEntered8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        propMeasures = getSharedPreferences("propList", MODE_PRIVATE);
+        propMeasureBox = getSharedPreferences("answersList", MODE_PRIVATE);
 
+
+        propTableScrollView = (TableLayout) findViewById(R.id.propTableScrollView);
+
+
+        insertMeasures();
+        updateSavedPropList(null);
     }
+
+
+    /* Manually Input Measures */
+    public void insertMeasures() {
+        propMeasuresEntered1 = new String("Proposition 41");
+        updateSavedPropList(propMeasuresEntered1);
+        propMeasuresEntered2 = new String("Proposition 42");
+        updateSavedPropList(propMeasuresEntered2);
+        propMeasuresEntered3 = new String("Proposition 1");
+        updateSavedPropList(propMeasuresEntered3);
+        propMeasuresEntered4 = new String("Proposition 2");
+        updateSavedPropList(propMeasuresEntered4);
+        propMeasuresEntered5 = new String("Proposition 45");
+        updateSavedPropList(propMeasuresEntered5);
+        propMeasuresEntered6 = new String("Proposition 46");
+        updateSavedPropList(propMeasuresEntered6);
+        propMeasuresEntered7 = new String("Proposition 47");
+        updateSavedPropList(propMeasuresEntered7);
+        propMeasuresEntered8 = new String("Proposition 48");
+        updateSavedPropList(propMeasuresEntered8);
+    }
+
+
+    public void updateSavedPropList(String newPropLabel) {
+        String[] measure = propMeasures.getAll().keySet().toArray(new String[0]);
+
+        if(newPropLabel != null) {
+            insertPropInScrollView(newPropLabel, Arrays.binarySearch(measure, newPropLabel));
+
+        }else {
+            // display the stocks on screen
+            for(int i = 0; i < measure.length; i++) {
+                insertPropInScrollView(measure[i], i);
+            }
+        }
+    }
+
+    private void insertPropInScrollView(String measure, int arrayIndex) {
+        // allows create/set a measure_row into the scroll view (dynamically)
+        LayoutInflater inflator = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        // putting it into a view
+        View newPropRow = inflator.inflate(R.layout.activity_measure_row, null);
+
+        // text view for scroll view row
+        TextView newMeasureTextView = (TextView) newPropRow.findViewById(R.id.stockSymbolTextView);
+
+        // add the measure to Measure TextView
+        newMeasureTextView.setText(measure);
+
+        //Add newStockRow View to the stockTableScrollView TableLayout
+        propTableScrollView.addView(newPropRow, arrayIndex);
+    }
+
+    private void saveMeasureButton(String button, boolean checked) {
+        Boolean isTheMeasureButtonNew = propMeasureBox.getBoolean(button, checked);
+        SharedPreferences.Editor editor = propMeasureBox.edit();
+
+        editor.putBoolean(button, checked);
+        editor.apply();
+    }
+
+
+    private void savePropSymbol(String newProp) {
+        String isThePropNew = propMeasures.getString(newProp, null);
+
+        SharedPreferences.Editor preferencesEditor = propMeasures.edit();
+
+        preferencesEditor.putString(newProp, newProp);
+        preferencesEditor.apply();
+
+        //if new
+        if(isThePropNew == null) {
+            updateSavedPropList(newProp);
+        }
+    }
+
+
 
 
     @Override
@@ -32,6 +139,8 @@ public class MainActivity extends ActionBarActivity {
 
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

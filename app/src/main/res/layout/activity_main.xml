@@ -8,8 +8,9 @@
     <TableRow android:id="@+id/tableRow1">
 
         <TextView
-            android:id="@+id/propositionsTextView"
-            android:text="@string/propositions"
+            android:id="@+id/measuresTextView"
+            android:text="@string/measures"
+            android:padding="@dimen/activity_horizontal_margin"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
