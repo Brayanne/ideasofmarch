@@ -38,6 +38,21 @@ public class MainActivity extends ActionBarActivity {
     String propMeasuresEntered7;
     String propMeasuresEntered8;
 
+    int  i= 0;
+
+    //corresponding url
+    String urls[] = {
+        "http://ballotpedia.org/California_Proposition_41,_Veterans_Housing_and_Homeless_Prevention_Bond_(2014)",
+        "http://ballotpedia.org/California_Proposition_42,_Compliance_of_Local_Agencies_with_Public_Records_(2014)",
+        "http://ballotpedia.org/California_Proposition_1,_Water_Bond_%282014%29",
+        "http://ballotpedia.org/California_Proposition_2,_Rainy_Day_Budget_Stabilization_Fund_Act_(2014)",
+        "http://ballotpedia.org/California_Proposition_45,_Public_Notice_Required_for_Insurance_Company_Rates_Initiative_(2014)",
+        "http://ballotpedia.org/California_Proposition_46,_Medical_Malpractice_Lawsuits_Cap_and_Drug_Testing_of_Doctors_(2014)",
+        "http://ballotpedia.org/California_Proposition_47,_Reduced_Penalties_for_Some_Crimes_Initiative_(2014)",
+        "http://ballotpedia.org/California_Proposition_48,_Referendum_on_Indian_Gaming_Compacts_(2014)"}; // insert urls
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -107,6 +122,8 @@ public class MainActivity extends ActionBarActivity {
     public void updateSavedPropList(String newPropLabel) {
         String[] measure = propMeasures.getAll().keySet().toArray(new String[0]);
 
+
+
         if(newPropLabel != null) {
             insertPropInScrollView(newPropLabel, Arrays.binarySearch(measure, newPropLabel));
 
@@ -132,10 +149,11 @@ public class MainActivity extends ActionBarActivity {
         // add the measure to Measure TextView
         newMeasureTextView.setText(measure);
 
-        String userCanSeeThis = "Proposition 1";
-        String url = "http://ballotpedia.org/California_Proposition_1,_Water_Bond_%282014%29";
+        String userCanSeeThis = measure;
+        String correspondingUrl = urls[i];
         newMeasureTextView.setText(userCanSeeThis);
-        addLinks(newMeasureTextView, userCanSeeThis, url);
+        addLinks(newMeasureTextView, userCanSeeThis, correspondingUrl);
+        i++;
 
 
         //Add newStockRow View to the stockTableScrollView TableLayout
