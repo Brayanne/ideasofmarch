@@ -5,7 +5,7 @@
     android:background="@android:color/transparent"
     android:padding="@dimen/activity_horizontal_margin">
 
-    <TextView android:id="@+id/stockSymbolTextView"
+    <TextView android:id="@+id/measureSymbolTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

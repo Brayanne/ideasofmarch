@@ -126,12 +126,16 @@ public class MainActivity extends ActionBarActivity {
         View newPropRow = inflator.inflate(R.layout.activity_measure_row, null);
 
         // text view for scroll view row
-        TextView newMeasureTextView = (TextView) newPropRow.findViewById(R.id.stockSymbolTextView);
+        TextView newMeasureTextView = (TextView) newPropRow.findViewById(R.id.measureSymbolTextView);
 
 
         // add the measure to Measure TextView
         newMeasureTextView.setText(measure);
 
+        String userCanSeeThis = "Proposition 1";
+        String url = "http://ballotpedia.org/California_Proposition_1,_Water_Bond_%282014%29";
+        newMeasureTextView.setText(userCanSeeThis);
+        addLinks(newMeasureTextView, userCanSeeThis, url);
 
 
         //Add newStockRow View to the stockTableScrollView TableLayout
