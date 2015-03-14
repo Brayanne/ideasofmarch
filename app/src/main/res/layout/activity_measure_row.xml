@@ -11,6 +11,8 @@
         android:layout_weight="1"
         android:textSize="18sp"
         android:textIsSelectable="true"
+        android:clickable="true"
+        android:onClick="onClick"
         android:text="Name"/>
 
     <RadioGroup android:id="@+id/choiceRadioGroup"

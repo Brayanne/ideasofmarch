@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +14,8 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -74,6 +77,33 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    /**
+     * @param textView
+     *            textView who's text you want to change
+     * @param linkThis
+     *            a regex of what text to turn into a link
+     * @param toThis
+     *            the url you want to send them to
+     */
+    public static void addLinks(TextView textView, String linkThis, String toThis) {
+        Pattern pattern = Pattern.compile(linkThis);
+        String scheme = toThis;
+        android.text.util.Linkify.addLinks(textView, pattern, scheme, new Linkify.MatchFilter() {
+            @Override
+            public boolean acceptMatch(CharSequence s, int start, int end) {
+                return true;
+            }
+        }, new Linkify.TransformFilter() {
+
+            @Override
+            public String transformUrl(Matcher match, String url) {
+                return "";
+            }
+        });
+    }
+
+
+
     public void updateSavedPropList(String newPropLabel) {
         String[] measure = propMeasures.getAll().keySet().toArray(new String[0]);
 
@@ -98,8 +128,11 @@ public class MainActivity extends ActionBarActivity {
         // text view for scroll view row
         TextView newMeasureTextView = (TextView) newPropRow.findViewById(R.id.stockSymbolTextView);
 
+
         // add the measure to Measure TextView
         newMeasureTextView.setText(measure);
+
+
 
         //Add newStockRow View to the stockTableScrollView TableLayout
         propTableScrollView.addView(newPropRow, arrayIndex);
