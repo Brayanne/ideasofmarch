@@ -9,7 +9,8 @@
     <TextView android:id="@+id/userName"
         android:layout_length="fill_parent"
         android:layout_height="wrap_content"
-        />
+        android:gravity="center"
+        android:text="User's Name"/>
 
     <TableRow android:id="@+id/tableRow1">
 
