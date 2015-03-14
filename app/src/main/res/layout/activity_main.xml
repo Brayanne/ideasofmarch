@@ -63,12 +63,5 @@
         </ScrollView>
     </TableRow>
 
-    <TableRow android:id="@+id/tabTextView3"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-
-
-
-    </TableRow>
 
 </TableLayout>
