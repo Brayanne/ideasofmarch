@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
+    TextView propositionsTextView;
+    TextView yesTextView;
+    TextView noTextView;
 
 
     @Override
