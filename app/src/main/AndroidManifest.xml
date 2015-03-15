@@ -13,15 +13,16 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <permission
-        android:name="com.example.newmapview.permission.MAPS_RECEIVE"
+        android:name="com.ideas.saymtfmtfmtf.ideasofmarch.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.example.newmapview.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.ideas.saymtfmtfmtf.ideasofmarch.permission.MAPS_RECEIVE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
+
 
     <application
         android:allowBackup="true"
@@ -30,16 +31,6 @@
         android:theme="@style/AppTheme"
         >
         <!-- android:icon="@mipmap/ic_launcher" -->
-        <!--
-        Google Map/APK-->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
-
-        <meta-data
-            android:name="com.google.android.maps.v2.AIzaSyAAwDWd1ilKdQCt7a-AtXoIiguRDe456zg"
-            android:value="AIzaSyAAwDWd1ilKdQCt7a-AtXoIiguRDe456zg" />
 
         <activity
             android:name=".MainActivity"
@@ -72,6 +63,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ideas.saymtfmtfmtf.ideasofmarch.home" />
         </activity>
+
+
+        <!--
+     Google Map/APK-->
+        <meta-data
+            android:name="com.google.android.maps.v2.AIzaSyAAwDWd1ilKdQCt7a-AtXoIiguRDe456zg"
+            android:value="AIzaSyAAwDWd1ilKdQCt7a-AtXoIiguRDe456zg" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"  />
+
+
     </application>
 
 </manifest>

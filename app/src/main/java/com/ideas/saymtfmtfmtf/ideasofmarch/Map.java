@@ -36,9 +36,12 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class Map extends FragmentActivity
-        implements OnMapReadyCallback {
+public class Map extends FragmentActivity  {
+
     private static final String TAG = Map.class.getName();
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,33 +50,13 @@ public class Map extends FragmentActivity
             getFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
+
+
+
         }
 
-        MapFragment mapFragment = (MapFragment) getFragmentManager()
-                    .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
 
     }
-
-    @Override
-    public void onMapReady(GoogleMap map) {
-        LatLng sydney = new LatLng(-33.867, 151.206);
-
-        map.setMyLocationEnabled(true);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
-
-        map.addMarker(new MarkerOptions()
-                .title("Sydney")
-                .snippet("The most populous city in Australia.")
-                .position(sydney));
-
-        /*
-        map.addMarker(new MarkerOptions()
-                .position(new LatLng(36,-128))
-                .title("Marker"));
-                */
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,7 +86,7 @@ public class Map extends FragmentActivity
      */
     public static class PlaceholderFragment extends Fragment {
 
-
+        private GoogleMap googleMap;
         private GoogleGeoInfo.Location mLocation;
         private GoogleGeoInfo.Place mPlace;
         private EditText mAddress;
@@ -116,11 +99,34 @@ public class Map extends FragmentActivity
         private TextView mElevation;
         private TextView mOfficialsLegend;
         private ListView mOfficials;
-
-
+/*
         public PlaceholderFragment() {
+            try{
+                _SetMap();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+
+
+        private void _SetMap() {
+            if (googleMap == null)
+                googleMap = ((MapFragment) getFragmentManager().findFragmentById(
+                        R.id.map)).getMap();
+            LatLng sydney = new LatLng(-33.867, 151.206);
+
+            googleMap.setMyLocationEnabled(true);
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
+
+
+            googleMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(-33.867, 151.206))
+                    .title("Marker"));
 
         }
+*/
+
         private ArrayList<String> getElectedOfficials(RepresentativeInfoResponse response) {
 // Stores list of elected officials with district and office
             final ArrayList<String> list = new ArrayList<String>();
