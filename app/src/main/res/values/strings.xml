@@ -12,6 +12,7 @@
 
     <string name="polling">Poll Map</string>
     <string name="title_activity_map">Map</string>
+    <string name="statistics">Statistics</string>
 
     <string name="enter_address">Enter Address</string>
     <string name="lat_legend">Latitude: </string>

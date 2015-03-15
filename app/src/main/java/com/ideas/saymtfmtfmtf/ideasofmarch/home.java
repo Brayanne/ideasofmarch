@@ -34,6 +34,15 @@ public class home extends ActionBarActivity {
             }
         });
 
+        Button statistics = (Button) findViewById(R.id.statistics);
+        statistics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Stats.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
     }
 
 
