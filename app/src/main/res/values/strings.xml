@@ -22,6 +22,13 @@
     <string name="elected_officials_legend">Elected Officials</string>
     <string name="title_activity_stats">Stats</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="statsTitle">Statistics</string>
+    <string name="statsIntro">During 2014 the United States had the worst voter turnout ever.
+        The 2012 presidential election saw a voter turnout of just 57.5% of eligible voters casting
+        ballots while the 2014 midterms boasted the lowest turnout since WWII at just 36.4%.
+        KnowVote will cater to a mass population and increase voter awareness as well as votes in
+        the regional polls by providing accurate, up to date information on campaigns and bills
+        being introduced.
+    </string>
 
 </resources>
