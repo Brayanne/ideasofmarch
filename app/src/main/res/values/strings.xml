@@ -8,7 +8,7 @@
     <string name="title_activity_tabs_fragment">TabsFragment</string>
 
     <string name="title_activity_tabbed">TabbedActivity</string>
-    <string name="title_activity_home">home</string>
+    <string name="title_activity_home">Know Vote!</string>
     <string name="measure_voted">My Measures</string>
     <string name="polling">Poll Map</string>
     <string name="title_activity_map">Map</string>
