@@ -50,9 +50,6 @@ public class Map extends FragmentActivity  {
             getFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
-
-
-
         }
 
 
