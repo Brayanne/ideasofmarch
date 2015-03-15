@@ -27,7 +27,7 @@
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
                 android:background="@null"
-                android:src="@mipmap/know_vote"/>
+                android:src="@mipmap/rsz_know_vote"/>
 
             <Button android:id="@+id/Home1" android:layout_height="96dp"
                 android:layout_width="match_parent" android:text="@string/measure_voted"
