@@ -87,6 +87,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="google-http-client-1.19.0" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" exported="" name="gson-2.3.1" level="project" />
     <orderEntry type="library" exported="" name="play-services-base-6.5.87" level="project" />
     <orderEntry type="library" exported="" name="google-http-client-gson-1.19.0" level="project" />
@@ -102,6 +103,13 @@
     <orderEntry type="library" exported="" name="play-services-maps-6.5.87" level="project" />
     <orderEntry type="library" exported="" name="google-api-client-1.19.1" level="project" />
     <orderEntry type="library" exported="" name="google-api-services-civicinfo-v2-rev9-1.19.1" level="project" />
+=======
+    <orderEntry type="library" exported="" name="google-http-client-android-1.19.0" level="project" />
+    <orderEntry type="library" exported="" name="google-api-services-civicinfo-v2-rev9-1.19.1" level="project" />
+    <orderEntry type="library" exported="" name="guava-jdk5-13.0" level="project" />
+    <orderEntry type="library" exported="" name="google-http-client-jackson2-1.19.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-22.0.0" level="project" />
+>>>>>>> ac60e8b8a53c481715138e0fcd17f267375eecad
   </component>
 </module>
 
