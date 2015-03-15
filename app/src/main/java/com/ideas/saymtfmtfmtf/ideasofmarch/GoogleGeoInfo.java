@@ -107,7 +107,8 @@ public abstract class GoogleGeoInfo {
             search = GoogleGeoInfo.GEOCODE_API_BASE
                     + GoogleGeoInfo.JSON
                     + GoogleGeoInfo.ADDRESS + URLEncoder.encode(addressString, encoding)
-                    + GoogleGeoInfo.KEY + GooglePlacesKey.API_KEY;
+                    /*+ GoogleGeoInfo.KEY + GooglePlacesKey.API_KEY*/
+                    + "&sensor=true";
             return search;
         } catch (Exception e) {
             e.printStackTrace();
@@ -120,7 +121,8 @@ public abstract class GoogleGeoInfo {
             search = GoogleGeoInfo.ELEVATION_API_BASE
                     + GoogleGeoInfo.JSON
                     + GoogleGeoInfo.LOCATIONS + location.getLat() + "," + location.getLng()
-                    + GoogleGeoInfo.KEY + GooglePlacesKey.API_KEY;
+                    /*+ GoogleGeoInfo.KEY + GooglePlacesKey.API_KEY*/
+                    + "&sensor=true";
         } catch (Exception e) {
             e.printStackTrace();
         }
