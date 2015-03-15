@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -7,7 +7,14 @@
     android:background="@mipmap/aflag"
     tools:context="com.ideas.saymtfmtfmtf.ideasofmarch.home">
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:src="@mipmap/knowvote"/>
 
     <ScrollView android:layout_width="fill_parent" android:layout_height = "495dp"
         android:id="@+id/scrollView"
@@ -19,17 +26,8 @@
                       android:orientation="vertical"
             android:weightSum="1">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/imageView"
-                android:layout_above="@+id/Home1"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:background="@null"
-                android:src="@mipmap/rsz_know_vote"/>
 
-            <Button android:id="@+id/Home1" android:layout_height="96dp"
+            <Button android:id="@+id/Home1" android:layout_height="72dp"
                 android:layout_width="match_parent" android:text="@string/measure_voted"
                 android:textSize="25dp" android:textStyle="bold"
                 android:background="@color/black"
@@ -39,7 +37,7 @@
 
 
 
-            <Button android:id="@+id/statistics" android:layout_height="96dp"
+            <Button android:id="@+id/statistics" android:layout_height="72dp"
                 android:layout_width="match_parent" android:text="@string/statistics"
                 android:textSize="25dp" android:textStyle="bold"
                 android:background="@color/black"
@@ -49,7 +47,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_alignParentEnd="true">></Button>
 
-            <Button android:id="@+id/pollingMap" android:layout_height="96dp"
+            <Button android:id="@+id/pollingMap" android:layout_height="72dp"
                 android:layout_width="match_parent" android:text="@string/polling"
                 android:textSize="25dp" android:textStyle="bold"
                 android:background="@color/black"
@@ -63,4 +61,4 @@
 
         </ScrollView>
 
-</RelativeLayout>
+</TableLayout>
