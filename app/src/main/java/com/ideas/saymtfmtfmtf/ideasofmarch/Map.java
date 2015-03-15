@@ -1,6 +1,8 @@
 package com.ideas.saymtfmtfmtf.ideasofmarch;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +17,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.api.services.civicinfo.model.GeographicDivision;
 import com.google.api.services.civicinfo.model.Office;
 import com.google.api.services.civicinfo.model.Official;
@@ -27,7 +34,8 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class Map extends ActionBarActivity {
+public class Map extends FragmentActivity
+        implements OnMapReadyCallback {
     private static final String TAG = Map.class.getName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +46,17 @@ public class Map extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+    }
+
+    @Override
+    public void onMapReady(GoogleMap map) {
+        map.addMarker(new MarkerOptions()
+                .position(new LatLng(36,-128))
+                .title("Marker"));
 
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 // Inflate the menu; this adds items to the action bar if it is present.
@@ -58,10 +75,17 @@ public class Map extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
+
     /**
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
+
+
         private GoogleGeoInfo.Location mLocation;
         private GoogleGeoInfo.Place mPlace;
         private EditText mAddress;
@@ -74,7 +98,10 @@ public class Map extends ActionBarActivity {
         private TextView mElevation;
         private TextView mOfficialsLegend;
         private ListView mOfficials;
+
+
         public PlaceholderFragment() {
+
         }
         private ArrayList<String> getElectedOfficials(RepresentativeInfoResponse response) {
 // Stores list of elected officials with district and office
@@ -146,6 +173,8 @@ public class Map extends ActionBarActivity {
                                     mLatitude.setText(" " + mLocation.getLat().toPlainString());
                                     mLngLegend.setText(R.string.lng_legend);
                                     mLongitude.setText(" " + mLocation.getLng().toPlainString());
+
+
 // Get elevation from Elevation API
                                     getElevationInfo(mLocation);
 // Get civic information from Civic Information API
