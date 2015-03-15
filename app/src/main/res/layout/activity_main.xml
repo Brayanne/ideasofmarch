@@ -11,6 +11,7 @@
             android:id="@+id/measuresTextView"
             android:text="@string/measures"
             android:padding="@dimen/activity_horizontal_margin"
+            android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
@@ -45,13 +46,13 @@
             android:id="@+id/propScrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:padding="7dp">
 
             <TableLayout
                 android:id="@+id/propTableScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
+                android:paddingLeft="40dp"
                 android:stretchColumns="yes">
 
 
