@@ -99,17 +99,11 @@ public class Map extends FragmentActivity  {
         private TextView mElevation;
         private TextView mOfficialsLegend;
         private ListView mOfficials;
-/*
+
         public PlaceholderFragment() {
-            try{
-                _SetMap();
-            }catch(Exception e){
-                e.printStackTrace();
-            }
         }
 
-
-
+/*
         private void _SetMap() {
             if (googleMap == null)
                 googleMap = ((MapFragment) getFragmentManager().findFragmentById(
@@ -168,6 +162,15 @@ public class Map extends FragmentActivity  {
             mElevation = (TextView) rootView.findViewById(R.id.elevation);
             mOfficialsLegend = (TextView) rootView.findViewById(R.id.elected_officials_legend);
             mOfficials = (ListView) rootView.findViewById(R.id.listView);
+
+        /*
+            try{
+                _SetMap();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+         */
+
 // Get Geolocation, Elevation and Civic Info data when user enters search address
             mButton.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -65,8 +65,7 @@
         </activity>
 
 
-        <!--
-     Google Map/APK-->
+        <!-- Google Map/APK-->
         <meta-data
             android:name="com.google.android.maps.v2.AIzaSyAAwDWd1ilKdQCt7a-AtXoIiguRDe456zg"
             android:value="AIzaSyAAwDWd1ilKdQCt7a-AtXoIiguRDe456zg" />
