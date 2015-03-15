@@ -60,23 +60,15 @@
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/imageView4"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:src="@mipmap/prop44"/>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
             android:id="@+id/imageView5"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:src="@mipmap/prop45"/>
-<!--
+
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/imageView6"
+            android:id="@+id/imageView4"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:src="@mipmap/prop46"/>
@@ -84,11 +76,19 @@
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/imageView7"
+            android:id="@+id/imageView6"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:src="@mipmap/prop47"/>
--->
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/imageView7"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/prop48"/>
+
 
     </LinearLayout>
 </ScrollView>
