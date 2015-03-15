@@ -42,6 +42,7 @@ abstract public class GoogleCivicInfo {
         }
     };
 
+
     public void getInfo(final String address) {
         new AsyncTask<Void, Void, RepresentativeInfoResponse>() {
             @Override
