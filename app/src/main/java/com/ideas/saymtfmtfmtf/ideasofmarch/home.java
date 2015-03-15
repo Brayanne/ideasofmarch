@@ -42,7 +42,6 @@ public class home extends ActionBarActivity {
                 startActivityForResult(intent, 0);
             }
         });
-
     }
 
 

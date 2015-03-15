@@ -42,4 +42,5 @@ dependencies {
     compile (group: 'com.google.http-client', name:'google-http-client-gson', version:'1.19.0') {
         exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
     }
+    compile 'com.google.android.gms:play-services:4.0.30'
 }
