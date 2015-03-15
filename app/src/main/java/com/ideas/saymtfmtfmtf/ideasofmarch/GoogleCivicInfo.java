@@ -55,6 +55,7 @@ abstract public class GoogleCivicInfo {
                                 .setGoogleClientRequestInitializer(KEY_INITIALIZER)
                                 .build();
                 RepresentativeInfoResponse representativeInfoResponse = null;
+
                 try {
                     representativeInfoResponse = civicInfo.representatives()
                             .representativeInfoByAddress()
